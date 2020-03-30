@@ -1,0 +1,133 @@
+﻿.Top {
+    background-color: white ;
+    border-bottom: 2px solid royalblue;
+    box-shadow: 0 0 5px 1px;
+}
+.Logo {
+    margin-left: 21%;
+    margin-right: 21%;
+    color: mediumaquamarine;
+}
+
+.Container {
+    margin-top: 5px;
+    background-color: #eaeef1;
+    box-shadow: 0 2px 10px 2px;
+}
+.Station1 {
+    margin-top: 10px;
+    margin-left: 1%;
+    margin-right: 55px;
+    width: 510px;
+    height: 50px;
+    background-color: cornflowerblue;
+    font-size: 200%;
+}
+.Station2 {
+    margin-top: 10px;
+    width: 500px;
+    height: 50px;
+    background-color: cornflowerblue;
+    font-size: 200%;
+}
+.Date {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 150px;
+    height: 40px;
+    background-color: cornflowerblue;
+}
+.Time {
+    margin-top: 1%;
+    margin-left: 19%;
+    width: 150px;
+    height: 40px;
+    background-color: cornflowerblue;
+}
+
+.btn {
+    margin-top: 10px;
+    margin-left: 30%;
+    width: 400px;
+    height: 50px;
+    font-size: 150%;
+    text-align: center
+}
+.btn2 {
+    width: 120px;
+    height: 52px;
+    position: relative;
+    margin-left: 20%;
+}
+.from {
+    font-size: 50px;
+    margin-left: 10px;
+    padding-right: 400px;
+    color:darkgray
+}
+.to {
+    font-size: 50px;
+    color: darkgray
+}
+.Datetext {
+    margin-left: 1%;
+    font-size: 30px;
+    color: darkgray
+}
+.Timetext {
+    margin-left: 10%;
+    font-size: 35px;
+    color: darkgray
+}
+.CarInfo {
+    margin-top: 10%;
+    font-size: 20px;
+    color: blue;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+
+}
+.TrainInfo {
+    font-size: 20px;
+    color: blue
+}
+.loading {
+    display: none;
+    color: gray;
+    font-weight: bold;
+    text-align: center;
+    font-size: 80px;
+}
+.Massage {
+    color: red;
+    font-size: 30px;
+}
+.output:not(:last-child) {
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+    color: lightslategrey
+}
+.output {
+    align-items: center;
+    vertical-align: middle;
+}
+.HomeLink {
+    position: absolute;
+    left: 580px;
+    top: 7px;
+      
+}
+ .HomeLink a {
+     color: darkblue;
+     font-size: 30px;
+ }
+.table-bordered td, .table-bordered th {
+    border: 1px solid #4d6277;
+}
+
+.ReserveButton {
+    margin-left: 35%;
+    width: 200px;
+    height: 50px;
+}

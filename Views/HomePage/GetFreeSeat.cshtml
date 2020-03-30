@@ -1,0 +1,127 @@
+﻿@using Models.Interface
+@Styles.Render("~/Content/css2")
+
+@model IFreeSeatList
+
+@{
+    ViewBag.Title = "Car Info";
+
+    //string style = null;
+    string Style_left = null;
+    string Style_top = null;
+    string Style_Color = null;
+    int l = 300;
+    var t = 390;
+}
+
+<table class="tableSecondPadge table-sm table-bordered table table-sm">
+    <thead class="thead-dark ">
+        <tr>
+            <th scope="col">№ поезда</th>
+            <th scope="col">Откуда / Куда</th>
+            <th scope="col">Дата</th>
+            <th scope="col">Отправление<br />Прибытие</th>
+            <th scope="col">В пути</th>
+            <th scope="col">Свободных мест</th>
+        </tr>
+    </thead>
+    <tbody align="left" class="TrainInfo">
+        @{
+            var timeInRote = Model.FreeTrainInfo.TimeDeparture - Model.FreeTrainInfo.TimeArrival;
+        }
+        <tr>
+            <td>@Model.FreeTrainInfo.TrainNumber</td>
+            <td>@Model.FreeTrainInfo.RouteName</td>
+            <td>@Model.Date.ToShortDateString()</td>
+            <td>@Model.FreeTrainInfo.TimeArrival<br />@Model.FreeTrainInfo.TimeDeparture</td>
+            <td>@timeInRote</td>
+            <td>
+                @foreach (var infocar in Model.CarTypeSeatInfos)
+                {
+                    //{
+                    //    t += 55;
+                    //    style = @t + "px";
+                    //}
+                    <div class="output">
+                        <form method="post" action="GetFreeSeat">
+                            <output name="CarTypeSeatNumber" class="CarInfo">
+                                @infocar.CarType : @infocar.NumberSeat
+                            </output>
+                            <input type="hidden" class="inline" name="CarType" value="@infocar.CarType">
+                            <input type="hidden" class="inline" name="TrainRouteId" value="@Model.FreeTrainInfo.TrainNumber">
+                            <input type="hidden" class="inline" name="StationFrom" value="@Model.bookingValue.StationFrom">
+                            <input type="hidden" class="inline" name="StationTo" value="@Model.bookingValue.StationTo">
+                            <input type="hidden" class="inline" name="Date" value="@Model.bookingValue.Date">
+                            <input type="hidden" class="inline" name="Time" value="@Model.bookingValue.Time">
+                            <button type="submit" class="btn2 btn-outline-info" formmethod="post">Выбрать</button>
+                        </form>
+                    </div>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="CarMenu">
+    @{
+        for (int i = 0; i < Model.free.Count; i++)
+        {
+            l += 130; ;
+            Style_left = l + "px";
+            <button id="hider @i" class="CarButton btn-outline-info" style=" left: @Style_left; ">
+                Вагон @Model.free[i].CarInfos.CarNumber (@Model.free[i].CarInfos.NumberSeat)
+            </button>
+        }
+    }
+</div>
+
+<div class="SeatInfo">
+    @{
+        Style_top = "block";
+    }
+    @for (int i = 0; i < Model.free.Count; i++)
+    {
+        if (i != 0)
+        {
+            Style_top = "none";
+        }
+        <div id="text @i" class="Car" style="display: @Style_top;">
+            @Html.Action("ShowFreeSeat", Model.free[i])
+        </div>
+    }
+</div>
+
+
+<div id="BookingTicket" class="BookingTicket" style="display: none">
+    <form class="Ticket" id="TicketTable" method="post" action="BuyingTicket">
+        <input type="hidden" class="inline" name="StationFrom" value="@Model.bookingValue.StationFrom">
+        <input type="hidden" class="inline" name="StationTo" value="@Model.bookingValue.StationTo">
+        <input type="hidden" class="inline" name="Date" value="@Model.bookingValue.Date">
+        <table class="tableBookingTicket table-sm table-bordered table table-sm">
+            <thead class="thead-dark ">
+                <tr>
+                    <th scope="col">№ </th>
+                    <th scope="col">Место</th>
+                    <th scope="col">Опции</th>
+                </tr>
+            </thead>
+            <tbody align="left" class="TrainInfo" id="Ticket">
+            </tbody>
+        </table>
+        <button type="submit" class="ReserveButton btn-outline-info">Резерв</button>
+    </form>
+</div>
+
+
+<script>
+    var count =@Model.free.Count;
+  requirejs(['main'], function () {
+      require.config = {
+          shim: { 'count': { exports: count } } };
+        require(['customScript/ShowCar']);
+        require(['customScript/jqueryChooseTrain']);
+    });
+</script>
+
+
+

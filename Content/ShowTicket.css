@@ -1,0 +1,60 @@
+﻿
+.Ticket {
+    margin-top: 1%;
+    font-size: 160%;
+}
+.TicketAll {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-bottom: 2px solid royalblue;
+    box-shadow: 0 0 5px 1px;
+    border-radius: 5px;
+}
+.ButtonBuy {
+    width: 200px;
+    height: 50px;
+    margin-left: 25%;
+}
+.NotBuyButton {
+    width: 200px;
+    height: 50px;
+}
+.ReserveButton {
+    margin-left: 35%;
+    width: 200px;
+    height: 50px;
+}
+.TicketBuying {
+    margin-top: 1%;
+    font-size: 140%;
+    border-bottom: 2px solid royalblue;
+    box-shadow: 0 0 5px 1px;
+    border-radius: 5px;
+}
+.TicketAllBuying {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-bottom: 2px solid royalblue;
+}
+span {
+    margin-left: 1%;
+}
+.ButtonsDownLoadAndSend {
+    margin-top: 1%;
+    
+}
+.Send {
+    margin-left: 25%;
+    width: 200px;
+    height: 50px;
+}
+.DownLoad {
+    width: 200px;
+    height: 50px;
+}
+.Res {
+    margin-top: 1%;
+}
+.TitleTicket {
+    font-size: 140%;
+}

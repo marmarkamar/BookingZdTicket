@@ -1,0 +1,77 @@
+﻿@using Models.model.List
+@Styles.Render("~/Content/css3")
+@{
+    ViewBag.Title = "Buying";
+}
+@model BuyingValueList
+
+<b class="TitleTicket"> Выбранный Биеет : </b>
+<form method="post" action="InsertTicket">
+    <div class="Ticket">
+        @for (int i = 0; i < @Model.TicketList.Count; i++)
+        {
+        <div class="TicketAll">
+            <span class="TrainNumberTicket">
+                Поезд №
+                @Model.TicketList[i].TrainNumber
+                ;
+            </span>
+            <span class="RouteNameTicket">
+                Название направления :
+                @Model.TicketList[i].RouteName
+                ;
+            </span>
+            <span class="CarNumberTicket">
+                Вагон №
+                @Model.TicketList[i].CarNumber
+                ;
+            </span>
+            <span class="SeatNumberTicket">
+                Место №
+                @Model.TicketList[i].SeatNumber
+                ;
+            </span>
+            <br />
+            <span class="StationFromTicket">
+                @Model.TicketList[i].StationFrom
+                >>
+            </span>
+            <span class="StationToTicket">
+                @Model.TicketList[i].StationTo
+                ;
+            </span>
+            <br />
+            <span class="SNameTicket">
+                @Model.TicketList[i].Name
+            </span>
+            <span class="NameTicket">
+                @Model.TicketList[i].SName
+            </span>
+            <br />
+            <span class="Price">
+                <b>
+                Цена :
+                @Model.TicketList[i].Price
+                </b>
+            </span>
+            <input type="hidden" class="inline" name="StationFrom" value="@Model.TicketList[i].StationFrom">
+            <input type="hidden" class="inline" name="StationTo" value="@Model.TicketList[i].StationTo">
+            <input type="hidden" class="inline" name="Surname" value="@Model.TicketList[i].SName">
+            <input type="hidden" class="inline" name="Name" value="@Model.TicketList[i].Name">
+            <input type="hidden" class="inline" name="SeatID" value="@Model.TicketList[i].SeatID">
+            <input type="hidden" class="inline" name="Date" value="@Model.TicketList[i].Date">
+        </div>
+        }
+        <button type="submit" class="ButtonBuy btn-outline-info">Buy</button>
+
+        <button type="button" class="NotBuyButton btn-outline-info">Not buy</button>
+        <div id="result"></div>
+    </div>
+</form>
+
+<script>
+    requirejs(['main'], function () {
+        require(['customScript/NotBuy']);
+    });
+</script>
+

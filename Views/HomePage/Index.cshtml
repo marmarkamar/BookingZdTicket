@@ -1,0 +1,54 @@
+﻿@using Models.Interface
+
+@model  IBookingValue
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/jquery")
+
+@{
+    ViewBag.Title = "Home Page";
+
+    DateTime date = DateTime.Today.Date;
+    DateTime maxDate = date.AddDays(30);
+    string today = date.ToString("yyyy-MM-dd");
+    string max = maxDate.ToString("yyyy-MM-dd");
+
+}
+<div class="ChoseStations">
+    @using (Ajax.BeginForm("Index", new { @Model.StationFrom, @Model.StationTo, @Model.Date }, new AjaxOptions
+    {
+        UpdateTargetId = "results",
+        LoadingElementId = "loading"
+    }))
+    {
+        <div>
+            <label class="from" for="tags">Откуда</label>
+            <label class="from" for="tags">Куда</label>
+            <input type="text" id="Station1" class="Station1" name="StationFrom" value="" aria-label="Откуда" required>
+            <input type="text" id="Station2" class="Station2" name="StationTo" value="" aria-label="Куда" required>
+            <br />
+            <small class="Datetext">Дата отправления</small>
+            <small class="Timetext">Время</small>
+            <br />
+            <input type="date" class="Date" name="Date" required min="@today" max="@max">
+            <input type="time" class="Time" name="Time" required>
+            <br />
+            <button type="submit" class="btn btn-outline-info" name="Пошук" formmethod="post">Поиск поездов</button>
+        </div>
+        <div>
+        </div>
+
+        <div id="loading" class="loading">
+            <p>Loading ...</p>
+        </div>
+    }
+</div>
+<div id="results"></div>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/Cupertino/jquery-ui.css"> @* tyt *@
+
+<script>
+    requirejs(['main'], function () {
+        require(['customScript/jqueryFile'])
+    });
+</script>
