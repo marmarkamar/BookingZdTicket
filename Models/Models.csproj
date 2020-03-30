@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{200C22F9-C520-49EF-B925-ED451273544D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\IBookingValue.cs" />
+    <Compile Include="Interface\IBookingValueForSeat.cs" />
+    <Compile Include="Interface\IBuyingValueForInsert.cs" />
+    <Compile Include="Interface\IBuyingValueList.cs" />
+    <Compile Include="Interface\IBuyingTicketValue.cs" />
+    <Compile Include="Interface\IBuyingValue.cs" />
+    <Compile Include="Interface\IConnect.cs" />
+    <Compile Include="Interface\IFreeList.cs" />
+    <Compile Include="Interface\IFreeSeatList.cs" />
+    <Compile Include="Interface\ISeatInfo.cs" />
+    <Compile Include="Interface\IShowTicketValue.cs" />
+    <Compile Include="Interface\IShowTicketValueList.cs" />
+    <Compile Include="Interface\IStationList.cs" />
+    <Compile Include="model\List\BuyingValueList.cs" />
+    <Compile Include="model\List\FreeSeatList.cs" />
+    <Compile Include="model\List\FreeSeatModellist.cs" />
+    <Compile Include="model\List\ShowTicketValueList.cs" />
+    <Compile Include="model\List\StationList.cs" />
+    <Compile Include="model\Models\AllFreeTrainInfo.cs" />
+    <Compile Include="model\Models\BookingValue.cs" />
+    <Compile Include="model\Models\BookingValueForSeat.cs" />
+    <Compile Include="model\Models\BuyingTicketValue.cs" />
+    <Compile Include="model\Models\BuyingValue.cs" />
+    <Compile Include="model\Models\BuyingValueForInsert.cs" />
+    <Compile Include="model\Models\CarInfo.cs" />
+    <Compile Include="model\Models\CarSeat.cs" />
+    <Compile Include="model\Models\FreeCarInfo.cs" />
+    <Compile Include="model\List\AllFreeTrainInfoList.cs" />
+    <Compile Include="model\List\FreeTrainCar.cs" />
+    <Compile Include="model\Models\FreeSeat.cs" />
+    <Compile Include="model\Models\FreeTrainInfo.cs" />
+    <Compile Include="model\Models\SeatInfo.cs" />
+    <Compile Include="model\Models\ShowTicketValue.cs" />
+    <Compile Include="model\Models\Station.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

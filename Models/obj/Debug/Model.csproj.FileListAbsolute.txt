@@ -1,0 +1,4 @@
+C:\Users\Борис\Desktop\HomeWork\asp\homework\Models\bin\Debug\Models.dll
+C:\Users\Борис\Desktop\HomeWork\asp\homework\Models\bin\Debug\Models.pdb
+C:\Users\Борис\Desktop\HomeWork\asp\homework\Models\obj\Debug\Models.dll
+C:\Users\Борис\Desktop\HomeWork\asp\homework\Models\obj\Debug\Models.pdb
