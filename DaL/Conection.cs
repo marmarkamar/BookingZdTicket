@@ -88,7 +88,7 @@ namespace DaL
         {
             EmailService Letter = new EmailService();
             string mail = Base.GetMailFromBD(name, sName);
-            Letter.SendMail("smtp.gmail.com", "marmarkamar@gmail.com", "159753789654321", mail, "Ticket", InsertValue);
+            Letter.SendMail("smtp.gmail.com", "mail@gmail.com", "passrord", mail, "Ticket", InsertValue);
         }
 
     }
